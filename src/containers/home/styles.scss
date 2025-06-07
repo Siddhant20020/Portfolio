@@ -3,32 +3,36 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
+  padding: 1rem;
 
   &__text-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.2em;
+    text-align: center;
 
     h1 {
       margin: 0;
       white-space: nowrap;
+      font-size: clamp(2rem, 5vw, 8rem);
+      line-height: 1.1;
     }
 
     .static-text {
       color: var(--yellow-theme-main-color);
       font-weight: 500;
-      font-size: 8rem;
-      line-height: 10rem;
+      font-size: clamp(2.5rem, 6vw, 8rem);
+      line-height: 1.1;
     }
 
     .dynamic-text {
       color: var(--yellow-theme-main-color);
       font-weight: 500;
-      font-size: 6rem;
-      line-height: 10rem;
+      font-size: clamp(2rem, 5vw, 6rem);
+      line-height: 1.1;
       position: relative;
     }
   }
@@ -37,16 +41,18 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    width: 100%;
 
     button {
       cursor: pointer;
-      padding: 10px 70px;
-      font-size: 2rem;
+      padding: 0.6rem 2.5rem;
+      font-size: clamp(1rem, 2.5vw, 2rem);
       background: transparent;
       color: var(--yellow-theme-main-color);
       border: 1.5px solid var(--yellow-theme-main-color);
       border-radius: 4px;
       font-weight: 500;
+      transition: background 0.3s ease, color 0.3s ease;
 
       &:hover {
         background: var(--yellow-theme-main-color);
@@ -56,27 +62,20 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
-  .home__text-wrapper h1 {
-    font-size: 3rem;
-    line-height: 5rem;
+/* Optional: Adjust font-size for even smaller screens */
+@media (max-width: 350px) {
+  .home__text-wrapper h1,
+  .home__text-wrapper .static-text,
+  .home__text-wrapper .dynamic-text {
+    font-size: 2rem !important;
+  }
+
+  .home__contact-me button {
+    padding: 0.5rem 2rem;
   }
 }
 
-@media only screen and (min-width: 551px) and (max-width: 768px) {
-  .home__text-wrapper h1 {
-    font-size: 4rem;
-    line-height: 6rem;
-  }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 990px) {
-  .home__text-wrapper h1 {
-    font-size: 6rem;
-    line-height: 8rem;
-  }
-}
-
+/* Cursor blinking animation (unchanged) */
 @keyframes blinkCursor {
   0% {
     opacity: 1;
