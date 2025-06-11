@@ -1,6 +1,17 @@
 export const skillsData = [
   {
-    label: "Frontend",
+    label: "AI / Machine Learning",
+    data: [
+      { skillName: "Python", percentage: 85 },
+      { skillName: "TensorFlow", percentage: 70 },
+      { skillName: "PyTorch", percentage: 65 },
+      { skillName: "Scikit-learn", percentage: 75 },
+      { skillName: "Data Analysis", percentage: 80 },
+      { skillName: "Deep Learning", percentage: 60 },
+    ],
+  },
+  {
+    label: "Frontend Development",
     data: [
       { skillName: "React.js", percentage: 90 },
       { skillName: "JavaScript", percentage: 85 },
@@ -9,7 +20,7 @@ export const skillsData = [
     ],
   },
   {
-    label: "Backend",
+    label: "Backend Development",
     data: [
       { skillName: "Node.js", percentage: 75 },
       { skillName: "Express.js", percentage: 75 },
@@ -27,15 +38,5 @@ export const skillsData = [
   },
 
 
-  {
-    label: "AI / Machine Learning",
-    data: [
-      { skillName: "Python", percentage: 85 },
-      { skillName: "TensorFlow", percentage: 70 },
-      { skillName: "PyTorch", percentage: 65 },
-      { skillName: "Scikit-learn", percentage: 75 },
-      { skillName: "Data Analysis", percentage: 80 },
-      { skillName: "Deep Learning", percentage: 60 },
-    ],
-  },
+
 ];
