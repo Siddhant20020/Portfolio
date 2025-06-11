@@ -20,14 +20,14 @@ const Home = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % interests.length);
       setRestartAnimation(true);
-      setTimeout(() => setRestartAnimation(false), 100); // Reset quickly
+      setTimeout(() => setRestartAnimation(false), 100);
     }, 3500);
 
     return () => clearInterval(interval);
   }, []);
 
-  const handleNavigateToContactMePage = () => {
-    navigate("/contact");
+  const handleNavigateToPortfolio = () => {
+    navigate("/portfolio");
   };
 
   return (
@@ -43,7 +43,7 @@ const Home = () => {
       </div>
 
       <div className="home__contact-me">
-        <button onClick={handleNavigateToContactMePage}>Hire Me</button>
+        <button onClick={handleNavigateToPortfolio}>Portfolio</button>
       </div>
     </section>
   );
