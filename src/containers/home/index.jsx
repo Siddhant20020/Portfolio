@@ -42,7 +42,7 @@ const Home = () => {
         </h1>
       </div>
 
-      <div className="home__contact-me">
+      <div className="home__portfolio">
         <button onClick={handleNavigateToPortfolio}>Portfolio</button>
       </div>
     </section>
