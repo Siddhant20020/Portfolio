@@ -40,10 +40,12 @@
   &__portfolio {
     display: flex;
     justify-content: center;
+    gap: 1rem;
     margin-top: 15px;
     width: 100%;
 
-    button {
+    button,
+    .resume-button {
       cursor: pointer;
       padding: 0.6rem 2.5rem;
       font-size: clamp(1rem, 2.5vw, 2rem);
@@ -52,30 +54,46 @@
       border: 1.5px solid var(--yellow-theme-main-color);
       border-radius: 4px;
       font-weight: 500;
+      text-decoration: none;
+      text-align: center;
       transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    button:hover,
+    .resume-button:hover {
+      background: var(--yellow-theme-main-color);
+      color: #000000;
+    }
+
+    .open-link {
+      background: var(--yellow-theme-main-color);
+      color: #000;
 
       &:hover {
-        background: var(--yellow-theme-main-color);
-        color: #000000;
+        background: transparent;
+        color: var(--yellow-theme-main-color);
+      }
+    }
+  }
+
+  &__social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+    a {
+      color: var(--yellow-theme-main-color);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #fff;
       }
     }
   }
 }
 
-/* Optional: Adjust font-size for even smaller screens */
-@media (max-width: 350px) {
-  .home__text-wrapper h1,
-  .home__text-wrapper .static-text,
-  .home__text-wrapper .dynamic-text {
-    font-size: 2rem !important;
-  }
-
-  .home__portfolio{
-    padding: 0.5rem 2rem;
-  }
-}
-
-/* Cursor blinking animation (unchanged) */
+/* Cursor blinking animation */
 @keyframes blinkCursor {
   0% {
     opacity: 1;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const interests = [
   "Full Stack Developer",
@@ -44,6 +45,34 @@ const Home = () => {
 
       <div className="home__portfolio">
         <button onClick={handleNavigateToPortfolio}>Portfolio</button>
+
+        <a
+          href="/Siddhant_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-button"
+        >
+          Open Resume
+        </a>
+      </div>
+
+      <div className="home__social-links">
+        <a
+          href="https://github.com/Siddhant20020"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <FaGithub size={30} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/siddhant-rai-b4961625a/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin size={30} />
+        </a>
       </div>
     </section>
   );
