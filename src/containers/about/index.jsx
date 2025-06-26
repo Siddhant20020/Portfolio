@@ -25,7 +25,7 @@ const personalDetails = [
   },
   {
     label: "Contact No",
-    value: "+977-98408751895",
+    value: "+977-9840875195",
   },
 ];
 
