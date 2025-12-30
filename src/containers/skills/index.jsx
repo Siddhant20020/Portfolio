@@ -4,7 +4,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate, AnimateKeyframes } from "react-simple-animate";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { skillsData } from "./utils";
-import './styles.scss';
+import './styles.css';
 
 const Skills = () => {
   return (

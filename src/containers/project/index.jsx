@@ -7,9 +7,11 @@ import EmployeeManagementImage from "../../images/employee_management.jpg";
 import SoccerSummarizationImage from "../../images/soccer_summarization.jpg";
 import MovieRecommenderImage from "../../images/movie_recommender.jpg";
 import BookRecommenderImage from "../../images/book_recommender.jpg";
-import "./styles.scss";
+import VendorImage from "../../images/VendorImage.jpg";
+import NextWordPredictorImage from "../../images/LSTM.png";
+import "./styles.css";
 
-const portfolioData = [
+const projectData = [
   {
     id: 2,
     name: "Chess Project (Socket.io)",
@@ -29,23 +31,36 @@ const portfolioData = [
     link: "https://github.com/Siddhant20020/Employee-Management-System",
   },
   {
-    id: 2,
+    id: 3,
+    name: "Next Word Predictor Using LSTM",
+    image: NextWordPredictorImage,
+    link: "https://github.com/Siddhant20020/Next-Word-Predictor-Using-LSTM",
+  },
+  {
+    id: 1,
     name: "FlashKick: Football Highlight Generator",
     image: SoccerSummarizationImage,
     link: "https://github.com/Siddhant20020/FlashKick",
   },
   {
-    id: 2,
+    id: 3,
     name: "Movie Recommender System",
     image: MovieRecommenderImage,
     link: "https://github.com/Siddhant20020/Movie-Recommender-System",
   },
   {
-    id: 2,
+    id: 3,
     name: "Book Recommender System",
     image: BookRecommenderImage,
     link: "https://github.com/Siddhant20020/Book-Recommender-System-using-Collaborative-Filtering",
   },
+  {
+    id: 3,
+    name: "Vendor Sales Performance Analysis",
+    image: VendorImage,
+    link: "https://github.com/Siddhant20020/Vendor-Sales-Performance-Analysis",
+  },
+
 ];
 
 const filterData = [
@@ -63,7 +78,7 @@ const filterData = [
   },
 ];
 
-const Portfolio = () => {
+const Projects = () => {
   const [filteredValue, setFilteredValue] = useState(1);
   const [hoveredValue, setHoveredValue] = useState(null);
 
@@ -78,29 +93,32 @@ const Portfolio = () => {
   // Filtering logic
   let filteredItems;
   if (filteredValue === 1) {
-    filteredItems = portfolioData;
+    filteredItems = projectData;
   } else if (filteredValue === 2) {
-    filteredItems = portfolioData; // All projects are development
+    // Development category: include projects with id 1 or 2
+    filteredItems = projectData.filter(item => [1, 2].includes(item.id));
   } else if (filteredValue === 3) {
-    // AI/ML category (only 3 specific projects)
-    filteredItems = portfolioData.filter((item) =>
+    // AI/ML category: include all AI/ML projects
+    filteredItems = projectData.filter(item =>
       [
         "FlashKick: Football Highlight Generator",
         "Movie Recommender System",
         "Book Recommender System",
+        "Vendor Sales Performance Analysis",
+        "Next Word Predictor Using LSTM"
       ].includes(item.name)
     );
   }
 
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="project" className="project">
       <PageHeaderContent
-        headerText="My Portfolio"
+        headerText="My Projects"
         icon={<BsInfoCircleFill size={40} />}
       />
-      <div className="portfolio__content">
+      <div className="project__content">
         {/* Filter */}
-        <ul className="portfolio__content__filter">
+        <ul className="project__content__filter">
           {filterData.map((item) => (
             <li
               className={item.filterId === filteredValue ? "active" : ""}
@@ -113,15 +131,15 @@ const Portfolio = () => {
         </ul>
 
         {/* Cards */}
-        <div className="portfolio__content__cards">
+        <div className="project__content__cards">
           {filteredItems.map((item, index) => (
             <div
-              className="portfolio__content__cards__item"
+              className="project__content__cards__item"
               key={`cardItem${item.name.trim()}`}
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={() => handleHover(null)}
             >
-              <div className="portfolio__content__cards__item__img-wrapper">
+              <div className="project__content__cards__item__img-wrapper">
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                   <img alt={item.name} src={item.image} />
                 </a>
@@ -148,4 +166,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;

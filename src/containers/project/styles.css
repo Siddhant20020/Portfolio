@@ -1,0 +1,176 @@
+.project__content {
+  padding: 50px;
+  width: 100%;
+}
+
+.project__content__filter {
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 25px;
+  border: 1px dashed var(--yellow-theme-main-color);
+}
+
+.project__content__filter li {
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  color: var(--yellow-theme-main-color);
+  text-transform: uppercase;
+  padding: 12px 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.project__content__filter li.active {
+  background: var(--yellow-theme-main-color);
+  color: var(--yellow-theme-sub-text-color);
+  font-weight: 600;
+  border-radius: 25px;
+}
+
+.project__content__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.project__content__cards__item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project__content__cards__item__img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project__content__cards__item__img-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project__content__cards__item__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: content;
+}
+
+.project__content__cards__item:hover .overlay {
+  opacity: 1;
+}
+
+.project__content__cards__item .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: var(--yellow-theme-main-color);
+}
+
+.project__content__cards__item .overlay div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 10px;
+}
+
+.project__content__cards__item .overlay div p {
+  color: #000;
+  margin: 0;
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  width: 0;
+  animation: typingEffect 3s steps(30, end) forwards,
+    blinkCursor 0.7s step-end infinite;
+  font-weight: 600;
+}
+
+.project__content__cards__item .overlay div button {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 8px 40px;
+  font-size: 1.5rem;
+  background: transparent;
+  color: #000;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+
+@media only screen and (max-width: 480px) {
+  .project__content__filter > li {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .project__content__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .project__content__cards__item .overlay div p {
+    font-size: 1.8rem;
+  }
+
+  .project__content__cards__item .overlay div button {
+    font-size: 1.2rem;
+    padding: 6px 24px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .project__content__filter > li {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .project__content__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project__content__cards__item .overlay div p {
+    font-size: 2rem;
+  }
+
+  .project__content__cards__item .overlay div button {
+    font-size: 1.3rem;
+    padding: 8px 30px;
+  }
+}
+
+/* Animations */
+
+@keyframes typingEffect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}

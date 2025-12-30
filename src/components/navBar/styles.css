@@ -1,0 +1,118 @@
+.navbar {
+  background-color: var(--yellow-theme-nav-background-color);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px; /* allows more space on big screens */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar__logo {
+  color: var(--yellow-theme-main-color);
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar__logo svg {
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo:hover svg {
+  transform: rotate(20deg);
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* space between menu items */
+  list-style: none;
+  margin: 0;
+  margin-left: auto; /* pushes it all the way to the right */
+  padding: 0;
+}
+
+.navbar__menu.active {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #181818;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  transition: all 0.3s ease-in-out;
+  margin-left: 0;
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--yellow-theme-main-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar__item:hover::after {
+  width: 100%;
+}
+
+.navbar__link {
+  color: var(--yellow-theme-main-color);
+  text-decoration: none;
+  font-size: 1.8rem; /* larger font size */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: #fff;
+}
+
+.navbar__icon {
+  display: none;
+  cursor: pointer;
+  color: var(--yellow-theme-main-color);
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .navbar__icon {
+    display: block;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { Animate } from "react-simple-animate";
-import "./styles.scss";
+import "./styles.css";
 import { FaNodeJs, FaDatabase, FaPython, FaBrain } from "react-icons/fa";
 import { DiReact } from "react-icons/di";
 
@@ -61,7 +61,7 @@ const About = () => {
             start={{ transform: "translateX(-900px)" }}
             end={{ transform: "translateX(0px)" }}
           >
-            
+
             <p>{jobSummary}</p>
           </Animate>
 

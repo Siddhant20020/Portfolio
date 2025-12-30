@@ -1,32 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import "tailwindcss";
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 
-:root{
-
-
-    --yellow-theme-background-color : #1d1d1d;
-    --yellow-theme-main-color : #ffdd40;
-    --yellow-theme-sub-text-color : #ffffff;
-    --yellow-theme-nav-background-color : #181818;
+:root {
+  --yellow-theme-background-color: #1d1d1d;
+  --yellow-theme-main-color: #ffdd40;
+  --yellow-theme-sub-text-color: #ffffff;
+  --yellow-theme-nav-background-color: #181818;
+  --font-family: "Roboto Slab", serif;
 }
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-html {
-    font-size: 62.5%;
-    height: 100%;
+html,
+body,
+#root {
+  height: 100%;
+
+  background-color: var(--yellow-theme-background-color);
+  color: var(--yellow-theme-sub-text-color);
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
-body {
-    background: var(--yellow-theme-background-color);
-    height: 100%;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-#root{
-    height: 100%;
+.App__main-content {
+  flex-grow: 1;
+  position: relative;
+  z-index: 10; /* put content above particles */
+  /* padding-top: 3px; offset for fixed navbar height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

@@ -5,7 +5,113 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 1rem;.home {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 1rem;
+}
+
+.home__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  text-align: center;
+}
+
+.home__text-wrapper h1 {
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(2rem, 5vw, 8rem);
+  line-height: 1.1;
+}
+
+.home__text-wrapper .static-text {
+  color: var(--yellow-theme-main-color);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 6vw, 8rem);
+  line-height: 1.1;
+}
+
+.home__text-wrapper .dynamic-text {
+  color: var(--yellow-theme-main-color);
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 6rem);
+  line-height: 1.1;
+  position: relative;
+}
+
+.home__project {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.home__project button,
+.home__project .resume-button {
+  cursor: pointer;
+  padding: 0.6rem 2.5rem;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  background: transparent;
+  color: var(--yellow-theme-main-color);
+  border: 1.5px solid var(--yellow-theme-main-color);
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.home__project button:hover,
+.home__project .resume-button:hover {
+  background: var(--yellow-theme-main-color);
+  color: #000000;
+}
+
+.home__project .open-link {
+  background: var(--yellow-theme-main-color);
+  color: #000;
+}
+
+.home__project .open-link:hover {
+  background: transparent;
+  color: var(--yellow-theme-main-color);
+}
+
+.home__social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.home__social-links a {
+  color: var(--yellow-theme-main-color);
+  transition: color 0.3s ease;
+}
+
+.home__social-links a:hover {
+  color: #fff;
+}
+
+@keyframes blinkCursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
   &__text-wrapper {
     display: flex;
@@ -37,7 +143,7 @@
     }
   }
 
-  &__portfolio {
+  &__project {
     display: flex;
     justify-content: center;
     gap: 1rem;

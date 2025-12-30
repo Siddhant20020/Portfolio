@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { FaBars, FaReact } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import "./styles.scss";
+import "./styles.css";
 
 const data = [
   { label: "HOME", to: "/" },
   { label: "ABOUT ME", to: "/about" },
   { label: "SKILLS", to: "/skills" },
-  { label: "PORTFOLIO", to: "/portfolio" },
+  { label: "PROJECTS", to: "/projects" },
 
 ];
 

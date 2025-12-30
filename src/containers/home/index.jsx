@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.scss";
+import "./styles.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const interests = [
@@ -27,8 +27,8 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleNavigateToPortfolio = () => {
-    navigate("/portfolio");
+  const handleNavigateToProject = () => {
+    navigate("/projects");
   };
 
   return (
@@ -43,11 +43,11 @@ const Home = () => {
         </h1>
       </div>
 
-      <div className="home__portfolio">
-        <button onClick={handleNavigateToPortfolio}>Portfolio</button>
+      <div className="home__project">
+        <button onClick={handleNavigateToProject}>My Projects</button>
 
         <a
-          href="/Siddhant_Resume.pdf"
+          href="/Siddhant_ML.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="resume-button"
