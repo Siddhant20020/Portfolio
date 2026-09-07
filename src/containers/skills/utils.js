@@ -1,7 +1,7 @@
 export const skillsData = [
-
   {
-    label: "AI / Machine Learning",
+
+    label: "Machine Learning",
     data: [
       { skillName: "Python", percentage: 85 },
       { skillName: "NumPy / Pandas", percentage: 85 },
