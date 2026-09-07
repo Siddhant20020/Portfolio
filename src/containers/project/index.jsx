@@ -9,6 +9,7 @@ import MovieRecommenderImage from "../../images/movie_recommender.jpg";
 import BookRecommenderImage from "../../images/book_recommender.jpg";
 import VendorImage from "../../images/VendorImage.jpg";
 import NextWordPredictorImage from "../../images/LSTM.png";
+import KidneyDiseaseImage from "../../images/kidney_disease.jpg";
 import "./styles.css";
 
 const projectData = [
@@ -29,6 +30,12 @@ const projectData = [
     name: "Employee Management System",
     image: EmployeeManagementImage,
     link: "https://github.com/Siddhant20020/Employee-Management-System",
+  },
+  {
+    id: 3,
+    name: "Kidney Disease Classification",
+    image: KidneyDiseaseImage,
+    link: "https://github.com/Siddhant20020/Kidney-Disease-Classification-DL-Project",
   },
   {
     id: 3,
@@ -101,6 +108,7 @@ const Projects = () => {
     // AI/ML category: include all AI/ML projects
     filteredItems = projectData.filter(item =>
       [
+        "Kidney Disease Classification",
         "FlashKick: Football Highlight Generator",
         "Movie Recommender System",
         "Book Recommender System",
