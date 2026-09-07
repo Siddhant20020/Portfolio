@@ -1,32 +1,41 @@
 .skills__content-wrapper {
   display: flex;
+  flex-wrap: wrap; /* prevents overflow instead of forcing squeeze */
   padding: 50px;
-  gap: 35px; 
+  gap: 35px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .skills__content-wrapper__inner-content {
-  flex: 1 1 0;
+  flex: 1 1 280px; /* shrinks gracefully instead of hard min-width */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: auto;
-  min-width: 320px; 
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .skills__content-wrapper__inner-content__category-text {
   display: inline-block;
   color: var(--yellow-theme-main-color);
-  font-size: 23px; /* increased font size */
+  font-size: clamp(
+    18px,
+    2vw + 1rem,
+    25px
+  ); /* scales instead of one fixed size */
   font-weight: 700;
-  line-height: 1.2rem;
+  line-height: 1.3;
   letter-spacing: 0.5px;
   position: relative;
   text-transform: uppercase;
-  padding: 8px 12px; /* increased padding */
+  padding: 12px 14px;
   border-bottom: 2px solid var(--yellow-theme-main-color);
-  white-space: nowrap; /* prevent wrapping */
-  margin-bottom: 10px; /* space below label */
+  white-space: normal; /* was nowrap — caused overflow on narrow screens */
+  overflow-wrap: break-word;
+  margin-bottom: 12px;
+  max-width: 100%;
 }
 
 .skills__content-wrapper__inner-content__category-text::before,
@@ -49,48 +58,63 @@
 
 .skills__content-wrapper__inner-content__progressbar-container {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .skills__content-wrapper__inner-content .progressbar-wrapper {
-  padding: 30px 0 0 0; /* less padding to push up */
+  width: 100%;
+  padding: 20px 0 0 0;
+  box-sizing: border-box;
 }
 
 .skills__content-wrapper__inner-content .progressbar-wrapper p {
-  font-size: 1.8rem; /* slightly bigger for clarity */
+  font-size: clamp(1rem, 1vw + 0.9rem, 1.8rem); /* scales down safely */
   margin: 0 0 10px;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--yellow-theme-sub-text-color);
+  word-break: break-word;
 }
 
-/* Responsive */
+/* Large tablets / small laptops */
 @media only screen and (max-width: 1024px) {
   .skills__content-wrapper {
     gap: 30px;
-  }
-  .skills__content-wrapper__inner-content {
-    min-width: 280px;
+    padding: 40px;
   }
 }
 
+/* Tablets */
 @media only screen and (max-width: 768px) {
   .skills__content-wrapper {
     flex-direction: column;
+    padding: 30px 20px;
   }
 
   .skills__content-wrapper__inner-content {
     width: 100%;
-    min-width: unset;
-    align-items: center; /* center text on small screens */
-  }
-
-  .skills__content-wrapper__inner-content__category-text {
-    font-size: 22px;
-    white-space: normal;
+    max-width: 100%;
+    align-items: center;
     text-align: center;
   }
 
-  .skills__content-wrapper__inner-content .progressbar-wrapper p {
-    font-size: 1.6rem;
+  .skills__content-wrapper__inner-content__category-text {
+    text-align: center;
+  }
+}
+
+/* Small phones */
+@media only screen and (max-width: 480px) {
+  .skills__content-wrapper {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .skills__content-wrapper__inner-content__category-text {
+    padding: 8px 10px;
+  }
+
+  .skills__content-wrapper__inner-content .progressbar-wrapper {
+    padding-top: 15px;
   }
 }

@@ -1,19 +1,25 @@
 export const skillsData = [
+
   {
-    label: "AI /Machine Learning ",
+    label: "AI / Machine Learning",
     data: [
       { skillName: "Python", percentage: 85 },
-      { skillName: "TensorFlow", percentage: 70 },
+      { skillName: "NumPy / Pandas", percentage: 85 },
       { skillName: "Scikit-learn", percentage: 75 },
-      { skillName: "Data Analysis", percentage: 80 },
-      { skillName: "Deep Learning", percentage: 60 },
+      { skillName: "TensorFlow / PyTorch", percentage: 70 },
+      { skillName: "Deep Learning", percentage: 65 },
+      { skillName: "NLP / LLMs", percentage: 65 },
+      { skillName: "Model Deployment", percentage: 60 },
+      { skillName: "MLOps", percentage: 55 },
     ],
+
   },
   {
     label: "Frontend Development",
     data: [
-      { skillName: "React.js", percentage: 80 },
       { skillName: "JavaScript", percentage: 85 },
+      { skillName: "React.js", percentage: 80 },
+      { skillName: "Next.js", percentage: 70 },
       { skillName: "HTML & CSS", percentage: 95 },
       { skillName: "Tailwind CSS", percentage: 80 },
     ],
@@ -21,10 +27,11 @@ export const skillsData = [
   {
     label: "Backend Development",
     data: [
-      { skillName: "Node.js", percentage: 75 },
-      { skillName: "Express.js", percentage: 75 },
+      { skillName: "Node.js / Express.js", percentage: 75 },
+      { skillName: "REST API Design", percentage: 75 },
       { skillName: "MongoDB", percentage: 70 },
-      { skillName: "MySQL", percentage: 60 },
+      { skillName: "PostgreSQL / MySQL", percentage: 65 },
+      { skillName: "Authentication (JWT/OAuth)", percentage: 65 },
     ],
   },
   {
@@ -33,6 +40,7 @@ export const skillsData = [
       { skillName: "Git & GitHub", percentage: 85 },
       { skillName: "Docker", percentage: 60 },
       { skillName: "AWS", percentage: 60 },
+      { skillName: "CI/CD (GitHub Actions)", percentage: 55 },
     ],
   },
 ];
